@@ -22,6 +22,8 @@
 		BF89591A17D5618A0093C3B7 /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BF8958FE17D561890093C3B7 /* CoreData.framework */; };
 		BF89592217D5618A0093C3B7 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = BF89592017D5618A0093C3B7 /* InfoPlist.strings */; };
 		BF89592417D5618A0093C3B7 /* CDCoursesTests.m in Sources */ = {isa = PBXBuildFile; fileRef = BF89592317D5618A0093C3B7 /* CDCoursesTests.m */; };
+		BF89592F17D563550093C3B7 /* Course.m in Sources */ = {isa = PBXBuildFile; fileRef = BF89592E17D563550093C3B7 /* Course.m */; };
+		BF89593117D563A50093C3B7 /* MainStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BF89593017D563A50093C3B7 /* MainStoryboard.storyboard */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -53,6 +55,9 @@
 		BF89591F17D5618A0093C3B7 /* CDCoursesTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "CDCoursesTests-Info.plist"; sourceTree = "<group>"; };
 		BF89592117D5618A0093C3B7 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		BF89592317D5618A0093C3B7 /* CDCoursesTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CDCoursesTests.m; sourceTree = "<group>"; };
+		BF89592D17D563550093C3B7 /* Course.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Course.h; sourceTree = "<group>"; };
+		BF89592E17D563550093C3B7 /* Course.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Course.m; sourceTree = "<group>"; };
+		BF89593017D563A50093C3B7 /* MainStoryboard.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = MainStoryboard.storyboard; path = ../MainStoryboard.storyboard; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -119,6 +124,9 @@
 				BF89590A17D561890093C3B7 /* AppDelegate.m */,
 				BF89590F17D561890093C3B7 /* Images.xcassets */,
 				BF89590C17D561890093C3B7 /* CDCourses.xcdatamodeld */,
+				BF89592D17D563550093C3B7 /* Course.h */,
+				BF89592E17D563550093C3B7 /* Course.m */,
+				BF89593017D563A50093C3B7 /* MainStoryboard.storyboard */,
 				BF89590117D561890093C3B7 /* Supporting Files */,
 			);
 			path = CDCourses;
@@ -228,6 +236,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BF89593117D563A50093C3B7 /* MainStoryboard.storyboard in Resources */,
 				BF89590517D561890093C3B7 /* InfoPlist.strings in Resources */,
 				BF89591017D561890093C3B7 /* Images.xcassets in Resources */,
 			);
@@ -248,6 +257,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BF89592F17D563550093C3B7 /* Course.m in Sources */,
 				BF89590E17D561890093C3B7 /* CDCourses.xcdatamodeld in Sources */,
 				BF89590B17D561890093C3B7 /* AppDelegate.m in Sources */,
 				BF89590717D561890093C3B7 /* main.m in Sources */,
@@ -368,6 +378,7 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "CDCourses/CDCourses-Prefix.pch";
 				INFOPLIST_FILE = "CDCourses/CDCourses-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 6.0;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				WRAPPER_EXTENSION = app;
 			};
@@ -381,6 +392,7 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "CDCourses/CDCourses-Prefix.pch";
 				INFOPLIST_FILE = "CDCourses/CDCourses-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 6.0;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				WRAPPER_EXTENSION = app;
 			};
