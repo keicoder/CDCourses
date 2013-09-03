@@ -17,6 +17,12 @@
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
     // 스토리보드를 사용하므로 스텁 코드는 삭제함.
+    
+    // 루트 뷰로 내비게이션컨트롤러 설정 및 managedObjectContext 참조
+    UINavigationController *nav = (UINavigationController *)self.window.rootViewController;
+    CoursesTableViewController *ctvc = (CoursesTableViewController *)[[nav viewControllers] objectAtIndex:0];
+    ctvc.managedObjectContext = self.managedObjectContext;
+    
     return YES;
 }
 
