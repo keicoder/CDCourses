@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		BF65EBB117D5680A00A40730 /* CoursesTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BF65EBB017D5680A00A40730 /* CoursesTableViewController.m */; };
 		BF8958F917D561890093C3B7 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BF8958F817D561890093C3B7 /* Foundation.framework */; };
 		BF8958FB17D561890093C3B7 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BF8958FA17D561890093C3B7 /* CoreGraphics.framework */; };
 		BF8958FD17D561890093C3B7 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BF8958FC17D561890093C3B7 /* UIKit.framework */; };
@@ -37,6 +38,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		BF65EBAF17D5680A00A40730 /* CoursesTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CoursesTableViewController.h; sourceTree = "<group>"; };
+		BF65EBB017D5680A00A40730 /* CoursesTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CoursesTableViewController.m; sourceTree = "<group>"; };
 		BF8958F517D561890093C3B7 /* CDCourses.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CDCourses.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		BF8958F817D561890093C3B7 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		BF8958FA17D561890093C3B7 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -120,13 +123,15 @@
 		BF89590017D561890093C3B7 /* CDCourses */ = {
 			isa = PBXGroup;
 			children = (
-				BF89590917D561890093C3B7 /* AppDelegate.h */,
-				BF89590A17D561890093C3B7 /* AppDelegate.m */,
 				BF89590F17D561890093C3B7 /* Images.xcassets */,
 				BF89590C17D561890093C3B7 /* CDCourses.xcdatamodeld */,
+				BF89593017D563A50093C3B7 /* MainStoryboard.storyboard */,
+				BF89590917D561890093C3B7 /* AppDelegate.h */,
+				BF89590A17D561890093C3B7 /* AppDelegate.m */,
 				BF89592D17D563550093C3B7 /* Course.h */,
 				BF89592E17D563550093C3B7 /* Course.m */,
-				BF89593017D563A50093C3B7 /* MainStoryboard.storyboard */,
+				BF65EBAF17D5680A00A40730 /* CoursesTableViewController.h */,
+				BF65EBB017D5680A00A40730 /* CoursesTableViewController.m */,
 				BF89590117D561890093C3B7 /* Supporting Files */,
 			);
 			path = CDCourses;
@@ -258,6 +263,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				BF89592F17D563550093C3B7 /* Course.m in Sources */,
+				BF65EBB117D5680A00A40730 /* CoursesTableViewController.m in Sources */,
 				BF89590E17D561890093C3B7 /* CDCourses.xcdatamodeld in Sources */,
 				BF89590B17D561890093C3B7 /* AppDelegate.m in Sources */,
 				BF89590717D561890093C3B7 /* main.m in Sources */,
@@ -457,6 +463,7 @@
 				BF89592917D5618A0093C3B7 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		BF89592A17D5618A0093C3B7 /* Build configuration list for PBXNativeTarget "CDCoursesTests" */ = {
 			isa = XCConfigurationList;
@@ -465,6 +472,7 @@
 				BF89592C17D5618A0093C3B7 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 
