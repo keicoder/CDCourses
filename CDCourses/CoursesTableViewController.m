@@ -19,15 +19,47 @@
 @synthesize fetchedResultsController = _fetchedResultsController;
 
 
-- (id)initWithStyle:(UITableViewStyle)style
+#pragma mark - addCourseViewControllerDelegate 메소드
+
+- (void) addCourseViewControllerDidCancel:(Course *)courseToDelete
 {
-    self = [super initWithStyle:style];
-    if (self) {
-        // Custom initialization
-    }
-    return self;
+    NSManagedObjectContext *context = self.managedObjectContext;
+    [context deleteObject:courseToDelete];
+    
+    [self dismissViewControllerAnimated:YES completion:nil];
 }
 
+
+- (void) addCourseViewControllerDidSave
+{
+    NSError *error = nil;
+    
+    NSManagedObjectContext *context = self.managedObjectContext;
+    if (![context save:&error]) {
+        NSLog(@"Error! %@", error);
+    }
+    
+    [self dismissViewControllerAnimated:YES completion:nil];
+}
+
+
+#pragma mark - Segue 메소드
+
+- (void) prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
+{
+    if ([[segue identifier] isEqualToString:@"addCourse"]) {
+        AddCourseViewController *acvc = (AddCourseViewController *)[segue destinationViewController];
+        
+        acvc.delegate = self;
+        
+        Course *newCourse = (Course *) [NSEntityDescription insertNewObjectForEntityForName:@"Course" inManagedObjectContext:[self managedObjectContext]];
+        
+        acvc.currentCourse = newCourse;
+    }
+}
+
+
+#pragma mark - 뷰 라이프 사이클
 
 - (void)viewDidLoad
 {

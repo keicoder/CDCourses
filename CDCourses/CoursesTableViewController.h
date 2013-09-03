@@ -7,8 +7,9 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "AddCourseViewController.h"
 
-@interface CoursesTableViewController : UITableViewController
+@interface CoursesTableViewController : UITableViewController <AddCourseViewControllerDelegate>
 
 
 @property (nonatomic, strong) NSManagedObjectContext *managedObjectContext; // AppDelegate의 컨텍스트 참조
