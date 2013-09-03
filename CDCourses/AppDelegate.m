@@ -16,6 +16,7 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
+    // 스토리보드를 사용하므로 스텁 코드는 삭제함.
     return YES;
 }
 
