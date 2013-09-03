@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <model userDefinedModelVersionIdentifier="" type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="3394" systemVersion="13A558" minimumToolsVersion="Automatic" macOSVersion="Automatic" iOSVersion="Automatic">
     <entity name="Course" representedClassName="Course" syncable="YES">
-        <attribute name="author" optional="YES" attributeType="String" syncable="YES"/>
-        <attribute name="releaseDate" optional="YES" attributeType="Date" syncable="YES"/>
-        <attribute name="title" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="author" optional="YES" attributeType="String" defaultValueString="AUTHOR" syncable="YES"/>
+        <attribute name="releaseDate" optional="YES" attributeType="Date" defaultDateTimeInterval="378734400" defaultValueString="2013-01-01" syncable="YES"/>
+        <attribute name="title" optional="YES" attributeType="String" defaultValueString="TITLE" syncable="YES"/>
     </entity>
     <elements>
         <element name="Course" positionX="0" positionY="0" width="0" height="0"/>

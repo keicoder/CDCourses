@@ -11,7 +11,9 @@
 @interface CoursesTableViewController : UITableViewController
 
 
-@property (nonatomic, strong) NSManagedObjectContext *managedObjectContext;
+@property (nonatomic, strong) NSManagedObjectContext *managedObjectContext; // AppDelegate의 컨텍스트 참조
+
+@property (nonatomic, strong) NSFetchedResultsController *fetchedResultsController;
 
 
 @end
