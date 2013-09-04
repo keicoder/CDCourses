@@ -9,7 +9,9 @@
 #import <UIKit/UIKit.h>
 #import "AddCourseViewController.h"
 
-@interface CoursesTableViewController : UITableViewController <AddCourseViewControllerDelegate>
+
+// 컨텍스트의 저장/저장 취소/모달 뷰 해제를 위한 델리게이트
+@interface CoursesTableViewController : UITableViewController <AddCourseViewControllerDelegate, NSFetchedResultsControllerDelegate>
 
 
 @property (nonatomic, strong) NSManagedObjectContext *managedObjectContext; // AppDelegate의 컨텍스트 참조
