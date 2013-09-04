@@ -14,6 +14,11 @@
 
 @implementation DisplayEditViewController
 
+@synthesize titleField;
+@synthesize authorField;
+@synthesize dateField;
+
+
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
@@ -26,8 +31,15 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-	// Do any additional setup after loading the view.
+	
+    titleField.text = [self.currentCourse title];
+    authorField.text = [self.currentCourse author];
+    
+    NSDateFormatter *df = [[NSDateFormatter alloc] init];
+    [df setDateFormat:@"yyyy-MM-dd"];
+    dateField.text = [df stringFromDate:[self.currentCourse releaseDate]];
 }
+
 
 - (void)didReceiveMemoryWarning
 {

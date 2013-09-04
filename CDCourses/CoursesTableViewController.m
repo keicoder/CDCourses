@@ -8,6 +8,7 @@
 
 #import "CoursesTableViewController.h"
 #import "Course.h"
+#import "DisplayEditViewController.h"
 
 @interface CoursesTableViewController ()
 
@@ -55,6 +56,15 @@
         Course *newCourse = (Course *) [NSEntityDescription insertNewObjectForEntityForName:@"Course" inManagedObjectContext:[self managedObjectContext]];
         
         acvc.currentCourse = newCourse;
+    }
+    
+    if ([[segue identifier] isEqualToString:@"showDetail"]) {
+        DisplayEditViewController *dvc = (DisplayEditViewController *)[segue destinationViewController];
+        
+        NSIndexPath *indexPath = [self.tableView indexPathForSelectedRow];
+        Course *selectedCourse = (Course *) [self.fetchedResultsController objectAtIndexPath:indexPath];
+        
+        dvc.currentCourse = selectedCourse;
     }
 }
 
@@ -184,7 +194,7 @@
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
     static NSString *CellIdentifier = @"Cell";
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier forIndexPath:indexPath];
+    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier];
     
     // Configure the cell...
     

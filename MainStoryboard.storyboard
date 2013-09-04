@@ -125,10 +125,10 @@
             </objects>
             <point key="canvasLocation" x="1573" y="-132"/>
         </scene>
-        <!--View Controller-->
+        <!--Display Edit View Controller-->
         <scene sceneID="rtq-wQ-HeM">
             <objects>
-                <viewController id="qA2-eU-2V0" sceneMemberID="viewController">
+                <viewController id="qA2-eU-2V0" customClass="DisplayEditViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="la4-xF-aeq"/>
                         <viewControllerLayoutGuide type="bottom" id="3un-0m-51E"/>
@@ -136,9 +136,35 @@
                     <view key="view" contentMode="scaleToFill" id="rbF-yJ-SdJ">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" enabled="NO" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="YK4-qB-M1Q">
+                                <rect key="frame" x="20" y="106" width="280" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" enabled="NO" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="foh-Le-apZ">
+                                <rect key="frame" x="20" y="154" width="280" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" enabled="NO" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="YWN-06-w0k">
+                                <rect key="frame" x="20" y="203" width="280" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
                     <navigationItem key="navigationItem" id="WgN-Cb-t4M"/>
+                    <connections>
+                        <outlet property="authorField" destination="foh-Le-apZ" id="Frn-jJ-jEb"/>
+                        <outlet property="dateField" destination="YWN-06-w0k" id="8rl-Fo-g1N"/>
+                        <outlet property="textField" destination="YK4-qB-M1Q" id="zUm-q4-kHg"/>
+                        <outlet property="titleField" destination="YK4-qB-M1Q" id="PRB-Kd-yD5"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="zXU-Vz-Px8" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
