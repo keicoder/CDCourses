@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		BF64123A17D6F40B00B5AE5C /* DisplayEditViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BF64123917D6F40B00B5AE5C /* DisplayEditViewController.m */; };
 		BF65EBB117D5680A00A40730 /* CoursesTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BF65EBB017D5680A00A40730 /* CoursesTableViewController.m */; };
 		BF8958F917D561890093C3B7 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BF8958F817D561890093C3B7 /* Foundation.framework */; };
 		BF8958FB17D561890093C3B7 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BF8958FA17D561890093C3B7 /* CoreGraphics.framework */; };
@@ -39,6 +40,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		BF64123817D6F40B00B5AE5C /* DisplayEditViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DisplayEditViewController.h; sourceTree = "<group>"; };
+		BF64123917D6F40B00B5AE5C /* DisplayEditViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DisplayEditViewController.m; sourceTree = "<group>"; };
 		BF65EBAF17D5680A00A40730 /* CoursesTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CoursesTableViewController.h; sourceTree = "<group>"; };
 		BF65EBB017D5680A00A40730 /* CoursesTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CoursesTableViewController.m; sourceTree = "<group>"; };
 		BF8958F517D561890093C3B7 /* CDCourses.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CDCourses.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -137,6 +140,8 @@
 				BF65EBB017D5680A00A40730 /* CoursesTableViewController.m */,
 				BFB53C0C17D597A200125CF9 /* AddCourseViewController.h */,
 				BFB53C0D17D597A200125CF9 /* AddCourseViewController.m */,
+				BF64123817D6F40B00B5AE5C /* DisplayEditViewController.h */,
+				BF64123917D6F40B00B5AE5C /* DisplayEditViewController.m */,
 				BF89590117D561890093C3B7 /* Supporting Files */,
 			);
 			path = CDCourses;
@@ -270,6 +275,7 @@
 				BF89592F17D563550093C3B7 /* Course.m in Sources */,
 				BF65EBB117D5680A00A40730 /* CoursesTableViewController.m in Sources */,
 				BF89590E17D561890093C3B7 /* CDCourses.xcdatamodeld in Sources */,
+				BF64123A17D6F40B00B5AE5C /* DisplayEditViewController.m in Sources */,
 				BFB53C0E17D597A200125CF9 /* AddCourseViewController.m in Sources */,
 				BF89590B17D561890093C3B7 /* AppDelegate.m in Sources */,
 				BF89590717D561890093C3B7 /* main.m in Sources */,
