@@ -46,12 +46,12 @@
 
 #pragma mark - Segue 메소드
 
-- (void) prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
-{
+-(void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
+    
     if ([[segue identifier] isEqualToString:@"addCourse"]) {
-        AddCourseViewController *acvc = (AddCourseViewController *)[segue destinationViewController];
         
-        acvc.delegate = self;
+        AddCourseViewController *acvc = (AddCourseViewController *)[segue destinationViewController];
+        acvc.delegate =self;
         
         Course *newCourse = (Course *) [NSEntityDescription insertNewObjectForEntityForName:@"Course" inManagedObjectContext:[self managedObjectContext]];
         
@@ -59,11 +59,9 @@
     }
     
     if ([[segue identifier] isEqualToString:@"showDetail"]) {
-        DisplayEditViewController *dvc = (DisplayEditViewController *)[segue destinationViewController];
-        
+        DisplayEditViewController *dvc = (DisplayEditViewController *) [segue destinationViewController];
         NSIndexPath *indexPath = [self.tableView indexPathForSelectedRow];
         Course *selectedCourse = (Course *) [self.fetchedResultsController objectAtIndexPath:indexPath];
-        
         dvc.currentCourse = selectedCourse;
     }
 }
@@ -93,51 +91,42 @@
 
 #pragma mark - fetchedResultsController section
 
-- (NSFetchedResultsController *) fetchedResultsController
-{
-    if (_fetchedResultsController !=nil) {
+-(NSFetchedResultsController *) fetchedResultsController {
+    if (_fetchedResultsController != nil) {
         return _fetchedResultsController;
     }
     NSFetchRequest *fetchRequest = [[NSFetchRequest alloc] init];
-    
     NSEntityDescription *entity = [NSEntityDescription entityForName:@"Course"
                                               inManagedObjectContext:[self managedObjectContext]];
     [fetchRequest setEntity:entity];
     
     NSSortDescriptor *sortDescriptor = [[NSSortDescriptor alloc] initWithKey:@"author"
                                                                    ascending:YES];
-    
     NSArray *sortDescriptors = [[NSArray alloc] initWithObjects:sortDescriptor, nil];
     [fetchRequest setSortDescriptors:sortDescriptors];
     
-    _fetchedResultsController = [[NSFetchedResultsController alloc] initWithFetchRequest:fetchRequest managedObjectContext:[self managedObjectContext] sectionNameKeyPath:@"author" cacheName:nil];
+    _fetchedResultsController = [[NSFetchedResultsController alloc]initWithFetchRequest:fetchRequest managedObjectContext:self.managedObjectContext sectionNameKeyPath:@"author" cacheName:nil];
     
-    _fetchedResultsController.delegate = self; // 델리게이트
+    _fetchedResultsController.delegate = self;
     
     return _fetchedResultsController;
 }
 
 
+
 #pragma mark - fetchedResultsController 델리게이트 메소드
 
-- (void) controllerWillChangeContent:(NSFetchedResultsController *)controller
-{
+-(void) controllerWillChangeContent:(NSFetchedResultsController *)controller {
     [self.tableView beginUpdates];
 }
 
-
-- (void) controllerDidChangeContent:(NSFetchedResultsController *)controller
-{
+-(void) controllerDidChangeContent:(NSFetchedResultsController *)controller {
     [self.tableView endUpdates];
 }
-
-
-- (void) controller:(NSFetchedResultsController *)controller didChangeObject:(id)anObject atIndexPath:(NSIndexPath *)indexPath forChangeType:(NSFetchedResultsChangeType)type newIndexPath:(NSIndexPath *)newIndexPath
-{
+-(void)controller:(NSFetchedResultsController *)controller didChangeObject:(id)anObject atIndexPath:(NSIndexPath *)indexPath forChangeType:(NSFetchedResultsChangeType)type newIndexPath:(NSIndexPath *)newIndexPath {
     
     UITableView *tableView = self.tableView;
     
-    // NSFetchedResultsChangeType별 대응
     switch (type) {
         case NSFetchedResultsChangeInsert:
             [tableView insertRowsAtIndexPaths:[NSArray arrayWithObject:newIndexPath] withRowAnimation:UITableViewRowAnimationFade];
@@ -147,11 +136,10 @@
             [tableView deleteRowsAtIndexPaths:[NSArray arrayWithObject:indexPath] withRowAnimation:UITableViewRowAnimationFade];
             break;
             
-        case NSFetchedResultsChangeUpdate:
-        {
-            Course *changeCourse = [self.fetchedResultsController objectAtIndexPath:indexPath];
+        case NSFetchedResultsChangeUpdate: {
+            Course *changedCourse = [self.fetchedResultsController objectAtIndexPath:indexPath];
             UITableViewCell *cell = [tableView cellForRowAtIndexPath:indexPath];
-            cell.textLabel.text = changeCourse.title;
+            cell.textLabel.text = changedCourse.title;
         }
             break;
             
@@ -160,22 +148,19 @@
             [tableView insertRowsAtIndexPaths:[NSArray arrayWithObject:newIndexPath] withRowAnimation:UITableViewRowAnimationFade];
             break;
     }
+    
 }
 
-
-- (void) controller:(NSFetchedResultsController *)controller didChangeSection:(id<NSFetchedResultsSectionInfo>)sectionInfo atIndex:(NSUInteger)sectionIndex forChangeType:(NSFetchedResultsChangeType)type
-{
+-(void) controller:(NSFetchedResultsController *)controller didChangeSection:(id<NSFetchedResultsSectionInfo>)sectionInfo atIndex:(NSUInteger)sectionIndex forChangeType:(NSFetchedResultsChangeType)type {
     switch (type) {
         case NSFetchedResultsChangeInsert:
             [self.tableView insertSections:[NSIndexSet indexSetWithIndex:sectionIndex] withRowAnimation:UITableViewRowAnimationFade];
             break;
-            
         case NSFetchedResultsChangeDelete:
             [self.tableView deleteSections:[NSIndexSet indexSetWithIndex:sectionIndex] withRowAnimation:UITableViewRowAnimationFade];
             break;
     }
 }
-
 
 #pragma mark - Table view data source
 
@@ -225,6 +210,7 @@
 
 
 // Override to support editing the table view.
+
 - (void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath
 {
     if (editingStyle == UITableViewCellEditingStyleDelete) {
@@ -234,10 +220,12 @@
         
         NSError *error = nil;
         if (![context save:&error]) {
-            NSLog(@"Error! %@", error);
+            NSLog(@"Error! %@",error);
         }
     }
+    
 }
+
 
 
 /*

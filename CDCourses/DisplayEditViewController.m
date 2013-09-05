@@ -7,6 +7,8 @@
 //
 
 #import "DisplayEditViewController.h"
+#import "AppDelegate.h"
+
 
 @interface DisplayEditViewController ()
 
@@ -31,11 +33,11 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-	
+	// Do any additional setup after loading the view.
     titleField.text = [self.currentCourse title];
     authorField.text = [self.currentCourse author];
     
-    NSDateFormatter *df = [[NSDateFormatter alloc] init];
+    NSDateFormatter *df = [[NSDateFormatter alloc]init];
     [df setDateFormat:@"yyyy-MM-dd"];
     dateField.text = [df stringFromDate:[self.currentCourse releaseDate]];
 }

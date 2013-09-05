@@ -11,7 +11,6 @@
 
 @interface DisplayEditViewController : UIViewController
 
-
 @property (nonatomic, strong) Course *currentCourse;
 
 @property (weak, nonatomic) IBOutlet UITextField *titleField;

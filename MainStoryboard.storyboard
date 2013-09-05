@@ -162,7 +162,6 @@
                     <connections>
                         <outlet property="authorField" destination="foh-Le-apZ" id="Frn-jJ-jEb"/>
                         <outlet property="dateField" destination="YWN-06-w0k" id="8rl-Fo-g1N"/>
-                        <outlet property="textField" destination="YK4-qB-M1Q" id="zUm-q4-kHg"/>
                         <outlet property="titleField" destination="YK4-qB-M1Q" id="PRB-Kd-yD5"/>
                     </connections>
                 </viewController>
